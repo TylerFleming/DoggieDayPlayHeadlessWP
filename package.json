@@ -4,7 +4,7 @@
   "description": "",
   "main": "script.js",
   "scripts": {
-    "start": "parcel index.html styles.scss"
+    "start": "parcel index.html ./styles/styles.scss"
   },
   "keywords": [],
   "author": "",
