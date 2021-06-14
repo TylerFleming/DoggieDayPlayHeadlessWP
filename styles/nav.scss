@@ -1,0 +1,78 @@
+@use 'variables.scss';
+
+header {
+    padding: 0 58px;
+    display: flex;
+    height: 100px;
+    background: variables.$brand-gold;
+
+    @include variables.tablet-media-query {
+        padding: 0 30px;
+    }
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+
+
+    &__logo {
+        
+        h1 {
+            a {
+            font-family: variables.$wendy-one;
+            font-size: 72px;
+            color: variables.$brand-black;
+            text-decoration: none;
+                &:visited {
+                    color: variables.$brand-black;
+                }
+                
+                @include variables.small-desktop-media-query {
+                    font-size: 50px;
+                }
+
+                @include variables.tablet-media-query {
+                    font-size: 32px;
+                }
+            }
+        }
+    }
+
+    &__links {
+
+    }
+
+    &__list {
+        display: flex;
+        list-style: none;
+    }
+    
+    &__item {
+        margin-right: 42px;
+        &:last-child {
+            margin-right: 0;
+        }
+
+        @include variables.small-desktop-media-query {
+            margin-right: 18px;
+        }
+    }
+
+    &__link {
+        font-family: variables.$wendy-one;
+        font-size: 36px;
+        color: variables.$brand-black;
+        text-decoration: none;
+
+        @include variables.small-desktop-media-query {
+            font-size: 24px;
+        }
+
+        @include variables.tablet-media-query {
+            font-size: 20px;
+        }
+    }
+}

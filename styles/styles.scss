@@ -1,64 +1,15 @@
-@import 'variables.scss';
-
+@use 'variables.scss';
+@use 'nav.scss';
+@use 'home.scss';
+@use 'about.scss';
+@use 'services.scss';
+@use 'contact.scss';
 
 body {
-    background-color: $body;
+    background-color: variables.$body;
 }
 
 .wrapper {
     max-width: 1440px;
     margin: 0 auto;
-}
-
-header {
-    padding: 0 58px;
-    display: flex;
-    height: 100px;
-    background: $brand-gold;
-}
-
-.navigation {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    justify-content: space-between;
-
-
-    &__logo {
-        
-        h1 {
-            a {
-            font-family: $wendy-one;
-            font-size: 72px;
-            color: $brand-black;
-            text-decoration: none;
-                &:visited {
-                    color: $brand-black;
-                }
-            }
-        }
-    }
-
-    &__links {
-
-    }
-
-    &__list {
-        display: flex;
-        list-style: none;
-    }
-    
-    &__item {
-        margin-right: 42px;
-        &:last-child {
-            margin-right: 0;
-        }
-    }
-
-    &__link {
-        font-family: $wendy-one;
-        font-size: 36px;
-        color: $brand-black;
-        text-decoration: none;
-    }
 }

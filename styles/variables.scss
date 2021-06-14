@@ -9,7 +9,7 @@ $roboto: 'Roboto', sans-serif;
 $normal: 400;
 $medium: 500;
 
-// main colors
+//main colors
 $body: #F8F8F8;
 $brand-gold: #E8BA2C;
 $brand-yellow: #F6D365;
@@ -18,7 +18,32 @@ $brand-black: #000;
 
 //screen sizes
 $desktop: 1440px;
-$tablet: 1024px;
+$small-desktop: 1375px;
+$tablet: 1040px;
 $tablet-small: 768px;
 $mobile: 480px;
 
+//mixins
+@mixin small-desktop-media-query {
+    @media (max-width: 1375px) {
+        @content;
+    }
+}
+
+@mixin tablet-media-query {
+    @media (max-width: 1024px) {
+        @content;
+    }
+}
+
+@mixin tablet-small-media-query {
+    @media (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin mobile-media-query {
+    @media (max-width: 480px) {
+        @content;
+    }
+}

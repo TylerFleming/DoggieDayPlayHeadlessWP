@@ -2,9 +2,9 @@
   "name": "DDP",
   "version": "1.0.0",
   "description": "",
-  "main": "script.js",
+  "main": "./js/script.js",
   "scripts": {
-    "start": "parcel index.html ./styles/styles.scss"
+    "start": "parcel index.html ./styles/styles.scss ./styles/nav.scss ./js/script.js"
   },
   "keywords": [],
   "author": "",
