@@ -9,6 +9,10 @@ header {
     @include variables.tablet-media-query {
         padding: 0 30px;
     }
+
+    @include variables.small-tablet-media-query {
+        position: relative;
+    }
 }
 
 .navigation {
@@ -21,7 +25,7 @@ header {
     &__logo {
         
         h1 {
-            a {
+            #logo {
             font-family: variables.$wendy-one;
             font-size: 72px;
             color: variables.$brand-black;
@@ -42,18 +46,39 @@ header {
     }
 
     &__links {
+        @include variables.small-tablet-media-query {
+            display: none;
+        }
 
+        &.open {
+            padding: 0 20px 0px 20px;
+            position: absolute;
+            top: 100px;
+            left: 0;
+            width: 100%;
+            display: flex;
+            background: variables.$brand-gold;
+        }
     }
 
     &__list {
         display: flex;
         list-style: none;
+
+        &.open {
+            flex-direction: column;
+            padding: 0;
+        }
     }
     
     &__item {
         margin-right: 42px;
         &:last-child {
             margin-right: 0;
+        }
+
+        &.open {
+            margin-top: 10px;
         }
 
         @include variables.small-desktop-media-query {
@@ -74,5 +99,39 @@ header {
         @include variables.tablet-media-query {
             font-size: 20px;
         }
+    }
+}
+
+.skipLink {
+    padding: 20px;
+    position: absolute;
+    top: 75px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: #e8ba2c;
+    border: 2px solid #000;
+    border-radius: 5px;
+
+        &__item {
+            font-family: variables.$wendy-one;
+            color: variables.$brand-black;
+            font-size: 24px;
+        }
+
+        &.open {
+            display: flex;
+        }
+
+}
+
+#menuToggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    @include variables.small-tablet-media-query {
+        display: block;
     }
 }

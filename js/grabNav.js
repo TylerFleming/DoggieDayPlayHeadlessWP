@@ -18,4 +18,16 @@ async function grabNav(url) {
     });
 }
 
+export function skipLink() {
+    let skipLinkTrigger = document.querySelector('#logo')
+    let skipLinkContainer = document.querySelector('.skipLink ')
+    let skipLinkElement = document.querySelector('.skipLink__item')
+    skipLinkTrigger.addEventListener('focus', () => {
+        skipLinkContainer.classList.add('open')
+    })
+    skipLinkElement.addEventListener('blur', () => {
+        skipLinkContainer.classList.remove('open')
+    })
+}
+
 export default grabNav
