@@ -1,0 +1,172 @@
+@use 'variables.scss';
+
+#homeIntro {
+    margin-top: 94px;
+    padding: 0 58px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    gap: 40px;
+    grid-template-areas: 
+    'introCTA introImage';
+
+    @include variables.small-desktop-media-query {
+        padding: 0 30px;
+    }
+
+    @include variables.under-tablet-media-query {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 20px;
+        grid-template-areas: 
+        'introCTA'
+        'introImage';
+    }
+}
+
+.introCTA {
+    max-width: 561px;
+    grid-area: introCTA;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.introCTA__header {
+    margin: 0 0 30px 0;
+    font-family: variables.$wendy-one;
+    font-size: 48px;
+    line-height: 50px;
+    color: variables.$brand-black;
+
+    @include variables.small-desktop-media-query {
+        margin: 0 0 15px 0;
+        font-size: 32px;
+        line-height: 36px;
+    }
+}
+
+.introCTA__paragraph {
+    margin: 0 0 50px 0;
+    font-family: variables.$roboto;
+    font-size: 20px;
+    line-height: 28px;
+    color: variables.$brand-black;
+
+    @include variables.small-desktop-media-query {
+        margin: 0 0 25px 0;
+        font-size: 18px;
+        line-height: 24px;
+    }
+}
+
+.introImage {
+    grid-area: introImage;
+    display: flex;
+    justify-content: center;
+
+    @include variables.under-tablet-media-query {
+        display: block;
+        max-width: 300px;
+    }
+}
+
+.homePageImage {
+    width: 100%;
+}
+
+
+#homePerks {
+    margin-top: 200px;
+    padding: 0 58px;
+    display: grid;
+    gap: 40px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+    'perksCopy perksImage';
+
+    @include variables.small-desktop-media-query {
+        padding: 0 30px;
+    }
+
+    @include variables.under-tablet-media-query {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 20px;
+        grid-template-areas: 
+        'perksCopy'
+        'perksImage';
+        justify-items: center;
+    }
+}
+
+
+.perksCopy {
+    max-width: 561px;
+    grid-area: perksCopy;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.perksCopy__header {
+    margin: 0 0 20px 0;
+    font-family: variables.$wendy-one;
+    font-size: 40px;
+    line-height: 50px;
+    color: variables.$brand-black;
+
+    @include variables.small-desktop-media-query {
+        margin: 0 0 15px 0;
+        font-size: 32px;
+        line-height: 36px;
+    }
+}
+
+.perksCopy__paragraph {
+    margin: 0 0 20px 0;
+    font-family: variables.$roboto;
+    font-size: 20px;
+    line-height: 28px;
+    color: variables.$brand-black;
+
+    @include variables.small-desktop-media-query {
+        margin: 0 0 25px 0;
+        font-size: 18px;
+        line-height: 24px;
+    }
+}
+
+.perksCopy__list {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+
+.perksCopy__item {
+    position: relative;
+    margin-bottom: 20px;
+    font-family: variables.$roboto;
+    font-size: 20px;
+    line-height: 28px;
+    color: variables.$brand-black;
+
+    &:before {
+        content: '';
+        font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f1b0";
+        position: absolute;
+        top: 0;
+        left: -30px;
+        height: 20px;
+        width: 20px;
+        color: variables.$brand-yellow;
+    }
+}
+
+.perksImage {
+    grid-area: perksImage;
+    display: flex;
+    justify-content: center;
+}

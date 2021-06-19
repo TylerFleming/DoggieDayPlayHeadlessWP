@@ -4,7 +4,7 @@
   "description": "",
   "main": "./js/script.js",
   "scripts": {
-    "start": "parcel index.html ./styles/styles.scss ./styles/nav.scss ./js/script.js"
+    "start": "parcel index.html ./styles/* ./js/script.js"
   },
   "keywords": [],
   "author": "",

@@ -1,6 +1,6 @@
 import grabNav, {skipLink} from './grabNav.js'
 import grabHamburger, {toggleMenu, hamburgerOpenIcon, hamburgeCloseIcon, loadMenuIconElement} from './grabHamburger.js'
-
+import { grabHomePageImages, grabHomePageText } from './homepage.js'
 
 let resizeTimer
 
@@ -30,7 +30,12 @@ window.addEventListener('resize', (event) => {
 
 
 
-grabNav('https://doggiedayplay.000webhostapp.com/wp-json/menus/v1/menus/primary')
-grabHamburger('https://doggiedayplay.000webhostapp.com/wp-json/wp/v2/media')
+// build out the nav
+grabNav('http://tylerfleming.dev/wp-json/menus/v1/menus/primary')
+grabHamburger('http://tylerfleming.dev/wp-json/wp/v2/media')
 toggleMenu()
 skipLink()
+
+// build out the homepage
+grabHomePageImages('http://tylerfleming.dev//wp-json/acf/v3/pages/37')
+grabHomePageText('http://tylerfleming.dev//wp-json/acf/v3/pages/37')
