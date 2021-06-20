@@ -16,7 +16,7 @@
 
     @include variables.under-tablet-media-query {
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr;
+        grid-template-rows: auto;
         gap: 20px;
         grid-template-areas: 
         'introCTA'
@@ -67,6 +67,7 @@
     justify-content: center;
 
     @include variables.under-tablet-media-query {
+        margin-top: 50px;
         display: block;
         max-width: 300px;
     }
@@ -91,8 +92,9 @@
     }
 
     @include variables.under-tablet-media-query {
+        margin-top: 100px;
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr;
+        grid-template-rows: auto;
         gap: 20px;
         grid-template-areas: 
         'perksCopy'
@@ -143,6 +145,10 @@
     list-style: none;
     padding: 0;
     text-align: left;
+
+    @include variables.small-desktop-media-query {
+        margin-left: 30px;
+    }
 }
 
 .perksCopy__item {
@@ -152,6 +158,11 @@
     font-size: 20px;
     line-height: 28px;
     color: variables.$brand-black;
+
+    @include variables.small-desktop-media-query {
+        font-size: 16px;
+        line-height: 24px;
+    }
 
     &:before {
         content: '';
@@ -169,4 +180,5 @@
     grid-area: perksImage;
     display: flex;
     justify-content: center;
+    width: 100%;
 }
