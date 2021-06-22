@@ -6,9 +6,9 @@ async function grabHamburger(url) {
     let data = await fetch(url)
     let hamburgerIcons = await data.json()
     hamburgerIcons.forEach(icon => {
-        if (icon.slug == "hamburger-closed") {
+        if (icon.slug == "hamburger-closed-2") {
             hamburgerOpenIcon = icon.source_url
-        } else if (icon.slug == "hamburger-opened") {
+        } else if (icon.slug == "hamburger-opened-2") {
             hamburgeCloseIcon = icon.source_url
         }
     });
@@ -17,6 +17,7 @@ async function grabHamburger(url) {
     let mobileMenuIcon = document.createElement('img')
     mobileMenuIcon.setAttribute('src', hamburgerOpenIcon);
     mobileMenuIcon.setAttribute('id', 'menuIcon');
+    mobileMenuIcon.setAttribute('alt', 'menu');
     mobileMenuButton.append(mobileMenuIcon);
 }
 

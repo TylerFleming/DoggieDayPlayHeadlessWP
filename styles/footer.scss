@@ -1,0 +1,84 @@
+@use 'variables.scss';
+
+footer {
+    margin-top: 160px;
+    display: flex;
+    width: 100%;
+    height: 100px;
+    background: variables.$brand-gold;
+
+    @include variables.under-tablet-media-query {
+        margin-top: 0;
+    }
+}
+
+.footerContainer {
+    padding: 0 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+    @include variables.under-tablet-media-query {
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
+.footerContactLinks {
+    ul {
+        margin: 0;
+        display: flex;
+        list-style: none;
+            li {
+                margin-bottom: 5px;
+                margin-right: 15px;
+                &:last-child {
+                    margin-right: 0;
+                }
+                    a, span {
+                        font-family: variables.$wendy-one;
+                        font-size: 24px;
+                        color: variables.$brand-black;
+                        text-decoration: none;
+
+
+                        @include variables.under-tablet-media-query {
+                            font-size: 16px;
+                        }
+                            i { 
+                                margin-right: 5px;
+                            }
+                    }
+            }
+        @include variables.under-tablet-media-query {
+            flex-direction: column;
+            text-align: center;
+        }
+    }
+}
+
+.footerSocialLinks {
+    ul {
+        margin: 0px;
+        display: flex;
+        list-style: none;
+            li {
+                margin-right: 15px;
+                &:last-child {
+                    margin-right: 0;
+                }
+                    a {
+                        font-family: variables.$wendy-one;
+                        font-size: 24px;
+                        color: variables.$brand-black;
+                        text-decoration: none;
+
+                        @include variables.under-tablet-media-query {
+                            font-size: 16px;
+                        }
+                    }
+            }
+    }
+}
+

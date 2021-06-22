@@ -7,6 +7,12 @@ export async function grabHomePageImages(url) {
     homePageIntroImageElement.setAttribute('src', homePageIntroImageURL)
     homePageIntroImageElement.setAttribute('alt', homePageIntroImageAltText)
 
+    let homePagePerksImageElement = document.querySelector('.perksImage > img')
+    let homePagePerksImageURL = data.acf.perks_image.url
+    let homepagePerksImageAltText = data.acf.perks_image.alt
+    
+    homePagePerksImageElement.setAttribute('src', homePagePerksImageURL)
+    homePagePerksImageElement.setAttribute('alt', homepagePerksImageAltText)
 }
 
 
@@ -29,6 +35,7 @@ export async function grabHomePageText(url) {
     homePageIntroButtonTextElement.innerText = homePageIntroButtonText;
     homePageIntroButtonTextElement.setAttribute('href', homePageIntroButtonURL )
     homePageIntroButtonTextElement.setAttribute('target', homepageIntroButtonTarget )
+    homePageIntroButtonTextElement.setAttribute('rel', 'noreferrer' )
 
     let homePagePerksHeadlineText = data.acf.perks_headline;
     let homePagePerksHeadlineElement = document.querySelector('.perksCopy__header')
@@ -49,5 +56,20 @@ export async function grabHomePageText(url) {
         `  
         perksListElement.innerHTML += listItemElement
     })
+
+    let homePageTestimonialHeaderElement = document.querySelector('.testimonialHeader');
+    let homePageTestimonialHeaderText = data.acf.testimonial_headline
+
+    homePageTestimonialHeaderElement.innerText = homePageTestimonialHeaderText
+
+    let homePageCallToActionButtonTextElement = document.querySelector('#homeCallToAction > .ctaButton > .ctaButton__link')
+    let homePageCallToActionText = data.acf.testimonial_cta_btn.title;
+    let homePageCallToActionURL = data.acf.testimonial_cta_btn.url;
+    let homePageCallToActionTarget = data.acf.testimonial_cta_btn.target;
+    homePageCallToActionButtonTextElement.innerText = homePageCallToActionText;
+    homePageCallToActionButtonTextElement.setAttribute('href', homePageCallToActionURL )
+    homePageCallToActionButtonTextElement.setAttribute('target', homePageCallToActionTarget )
+    homePageCallToActionButtonTextElement.setAttribute('rel', 'noreferrer' )
+
 }
 

@@ -5,6 +5,8 @@
 @use 'services.scss';
 @use 'contact.scss';
 @use 'button.scss';
+@use 'slider.scss';
+@use 'footer.scss';
 
 body {
     background-color: variables.$body;
@@ -13,4 +15,5 @@ body {
 .wrapper {
     max-width: 1440px;
     margin: 0 auto;
+    overflow: hidden;
 }

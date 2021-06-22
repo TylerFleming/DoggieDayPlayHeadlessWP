@@ -12,6 +12,7 @@ async function grabNav(url) {
         link.innerText = linkText;
         link.setAttribute('href', linkURL)
         link.setAttribute('target', '_blank')
+        link.setAttribute('rel', 'noreferrer')
         link.classList.add('navigation__link')
         linkElementParent.append(link)
         navList.append(linkElementParent)

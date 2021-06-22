@@ -1,0 +1,91 @@
+@use 'variables.scss';
+
+
+#aboutIntro {
+    margin-top: 130px;
+    padding: 0 58px;
+
+    @include variables.small-desktop-media-query {
+        padding: 0 30px;
+    }   
+}
+
+.aboutIntro__container {
+    display: flex;
+    flex-direction: column;
+
+    .ctaButton {
+        align-self: center;
+    }
+}
+
+.aboutParagraph {
+    margin: 0 0 50px 0;
+    font-family: variables.$roboto;
+    font-size: 20px;
+    line-height: 28px;
+    color: variables.$brand-black;
+    text-align: center;
+
+    @include variables.small-desktop-media-query {
+        margin: 0 0 25px 0;
+        font-size: 18px;
+        line-height: 24px;
+    }
+}
+
+
+
+.aboutHeadline {
+margin: 0 0 30px 0;
+font-family: variables.$wendy-one;
+font-size: 48px;
+line-height: 50px;
+color: variables.$brand-black;
+
+    @include variables.small-desktop-media-query {
+        margin: 0 0 15px 0;
+        font-size: 32px;
+        line-height: 36px;
+    }
+}
+
+
+#aboutStaff {
+
+    margin-top: 90px;
+    padding: 0 58px;
+
+    @include variables.small-desktop-media-query {
+        padding: 0 30px;
+    }   
+}
+
+.aboutStaffHeadline {
+    margin: 0 0 30px 0;
+    font-family: variables.$wendy-one;
+    font-size: 48px;
+    line-height: 50px;
+    color: variables.$brand-black;
+
+    @include variables.small-desktop-media-query {
+        margin: 0 0 15px 0;
+        font-size: 32px;
+        line-height: 36px;
+    }
+}
+
+.aboutStaffParagraph {
+    margin: 0 0 50px 0;
+    font-family: variables.$roboto;
+    font-size: 20px;
+    line-height: 28px;
+    color: variables.$brand-black;
+    text-align: center;
+
+    @include variables.small-desktop-media-query {
+        margin: 0 0 25px 0;
+        font-size: 18px;
+        line-height: 24px;
+    }
+}
