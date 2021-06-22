@@ -13,6 +13,10 @@
 .aboutIntro__container {
     display: flex;
     flex-direction: column;
+    
+    @include variables.under-tablet-media-query {
+        text-align: center;
+    }
 
     .ctaButton {
         align-self: center;
@@ -59,6 +63,10 @@ color: variables.$brand-black;
     @include variables.small-desktop-media-query {
         padding: 0 30px;
     }   
+
+    @include variables.under-tablet-media-query {
+        text-align: center;
+    }
 }
 
 .aboutStaffHeadline {
