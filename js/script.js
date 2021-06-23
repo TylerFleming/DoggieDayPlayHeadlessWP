@@ -1,14 +1,11 @@
 import grabNav, {skipLink} from './grabNav.js'
-import grabHamburger, {toggleMenu, hamburgerOpenIcon, hamburgeCloseIcon, loadMenuIconElement} from './grabHamburger.js'
+import grabHamburger, {resetMenu, toggleMenu, hamburgerOpenIcon, hamburgeCloseIcon, loadMenuIconElement} from './grabHamburger.js'
 import { grabHomePageImages, grabHomePageText } from './homePage.js'
 import { grabAboutPageImages, grabAboutPageText } from './aboutPage.js'
 import { grabServicesPageImages, grabServicesPageText } from './servicesPage.js'
 import grabContactPageText from './contactPage.js'
 import loadTestimonials from './loadTestimonials.js'
 import grabFooter from './grabFooter.js'
-import barba from '@barba/core'
-import barbaCss from '@barba/css'
-import barbaPrefetch from '@barba/prefetch'
 
 // build out the nav
 grabNav('https://tylerfleming.dev/wp-json/menus/v1/menus/primary')
@@ -16,25 +13,23 @@ grabHamburger('https://tylerfleming.dev/wp-json/wp/v2/media')
 toggleMenu()
 skipLink()
 
-barba.use(barbaPrefetch);
+const bodyClass = document.body.classList[0]
 
-barba.use(barbaCss)
-
-barba.hooks.beforeEnter( (data) => {
-    // run the scripts based upon the current page
-    switch(data.next.namespace) {
+    switch(bodyClass) {
         case 'homepage':
-        grabHomePageImages('https://tylerfleming.dev/wp-json/acf/v3/pages/37')
-        grabHomePageText('https://tylerfleming.dev/wp-json/acf/v3/pages/37')
-        loadTestimonials('https://tylerfleming.dev/wp-json/acf/v3/pages/37')
-        grabFooter('https://tylerfleming.dev/wp-json/acf/v3/options/options')
-
+            grabHomePageImages('https://tylerfleming.dev/wp-json/acf/v3/pages/37')
+            grabHomePageText('https://tylerfleming.dev/wp-json/acf/v3/pages/37')
+            loadTestimonials('https://tylerfleming.dev/wp-json/acf/v3/pages/37')
+            grabFooter('https://tylerfleming.dev/wp-json/acf/v3/options/options')
+            // resetMenu()
+            
         break;
 
         case 'aboutpage':
             grabAboutPageImages('https://tylerfleming.dev/wp-json/acf/v3/pages/86')
             grabAboutPageText('https://tylerfleming.dev/wp-json/acf/v3/pages/86')
             grabFooter('https://tylerfleming.dev/wp-json/acf/v3/options/options')
+            // resetMenu()
 
         break;
 
@@ -42,31 +37,19 @@ barba.hooks.beforeEnter( (data) => {
             grabServicesPageImages('https://tylerfleming.dev/wp-json/acf/v3/pages/125')
             grabServicesPageText('https://tylerfleming.dev/wp-json/acf/v3/pages/125')
             grabFooter('https://tylerfleming.dev/wp-json/acf/v3/options/options')
-            
+            // resetMenu()
+
         break;
 
         case 'contactpage':
             grabContactPageText('https://tylerfleming.dev/wp-json/acf/v3/pages/156')
             grabFooter('https://tylerfleming.dev/wp-json/acf/v3/options/options')
+            // resetMenu()
 
         break;
 
     }
-})
 
-
-barba.init({
-    transitions: [
-        {
-            name: 'cover',
-            to: {
-                namespace: ['homepage', 'aboutpage', 'servicespage', 'contactpage']
-            },
-            leave() {},
-            enter() {}
-        }
-    ]
-})
 
 
 

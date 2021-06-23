@@ -37,6 +37,7 @@ export async function grabHomePageText(url) {
     homePageIntroButtonTextElement.setAttribute('target', homepageIntroButtonTarget )
     homePageIntroButtonTextElement.setAttribute('rel', 'noreferrer' )
 
+
     let homePagePerksHeadlineText = data.acf.perks_headline;
     let homePagePerksHeadlineElement = document.querySelector('.perksCopy__header')
     let homePagePerksCopyText = data.acf.perks_copy;
@@ -70,6 +71,5 @@ export async function grabHomePageText(url) {
     homePageCallToActionButtonTextElement.setAttribute('href', homePageCallToActionURL )
     homePageCallToActionButtonTextElement.setAttribute('target', homePageCallToActionTarget )
     homePageCallToActionButtonTextElement.setAttribute('rel', 'noreferrer' )
-
 }
 

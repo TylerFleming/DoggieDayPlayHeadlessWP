@@ -35,9 +35,8 @@ export async function grabAboutPageText(url) {
 
     let aboutPageIntroButtonLinkElement = document.querySelector('.ctaButton__link')
     let aboutPageIntroButtonLinkText = data.acf.about_button.title
-    let aboutPageIntroButtonLinkURL = data.acf.about_button.href
+    let aboutPageIntroButtonLinkURL = data.acf.about_button.url
     let aboutPageIntroButtonTarget = data.acf.about_button.target
-
     aboutPageIntroButtonLinkElement.innerText = aboutPageIntroButtonLinkText
     aboutPageIntroButtonLinkElement.setAttribute('href', aboutPageIntroButtonLinkURL)
     aboutPageIntroButtonLinkElement.setAttribute('target', aboutPageIntroButtonTarget)

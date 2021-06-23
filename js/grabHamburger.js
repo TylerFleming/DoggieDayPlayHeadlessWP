@@ -1,5 +1,5 @@
 export let hamburgerOpenIcon;
-export let hamburgeCloseIcon;
+export let hamburgerCloseIcon;
 
 async function grabHamburger(url) {
 
@@ -9,7 +9,7 @@ async function grabHamburger(url) {
         if (icon.slug == "hamburger-closed") {
             hamburgerOpenIcon = icon.source_url
         } else if (icon.slug == "hamburger-opened") {
-            hamburgeCloseIcon = icon.source_url
+            hamburgerCloseIcon = icon.source_url
         }
     });
 
@@ -29,7 +29,7 @@ export function toggleMenu() {
         if ( hamburgerMenu.getAttribute('aria-pressed') === 'false' ) {
             hamburgerMenu.setAttribute('aria-pressed', true)
             let hamburgerIcon = loadMenuIconElement()
-            hamburgerIcon.setAttribute('src', hamburgeCloseIcon)
+            hamburgerIcon.setAttribute('src', hamburgerCloseIcon)
             navigationLinksContainer.classList.add('open')
             navigationList.classList.add('open')
             let navigationListItem = [...document.querySelectorAll('.navigation__item')]
@@ -53,6 +53,18 @@ export function toggleMenu() {
 
 export function loadMenuIconElement() { 
     return document.querySelector('#menuIcon')
+}
+
+export function resetMenu() {
+    if ( window.innerWidth <= 768 ) {
+        let hamburgerMenu = document.querySelector('#menuToggle')
+        let nav = document.querySelector('.navigation__links')
+        let hamburgerIcon = loadMenuIconElement()
+        nav.classList.remove('open')
+    
+        hamburgerMenu.setAttribute('aria-pressed', false)
+    }
+
 }
 
 export default grabHamburger
