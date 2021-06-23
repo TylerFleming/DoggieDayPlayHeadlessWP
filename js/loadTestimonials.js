@@ -31,6 +31,7 @@ async function loadTestimonials(url) {
 
         let testimonialAnchor = [...document.querySelectorAll('.testimonialNav__button__anchor')]
         testimonialAnchor.forEach(anchor => {
+            
             anchor.addEventListener('click', (e) => {
                 testimonialAnchor.forEach(anchor => {
                     anchor.classList.remove('active')
@@ -47,5 +48,7 @@ async function loadTestimonials(url) {
         idCounter++
     })
 }
+
+
 
 export default loadTestimonials

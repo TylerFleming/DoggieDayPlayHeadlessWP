@@ -6,9 +6,9 @@ async function grabHamburger(url) {
     let data = await fetch(url)
     let hamburgerIcons = await data.json()
     hamburgerIcons.forEach(icon => {
-        if (icon.slug == "hamburger-closed-2") {
+        if (icon.slug == "hamburger-closed") {
             hamburgerOpenIcon = icon.source_url
-        } else if (icon.slug == "hamburger-opened-2") {
+        } else if (icon.slug == "hamburger-opened") {
             hamburgeCloseIcon = icon.source_url
         }
     });

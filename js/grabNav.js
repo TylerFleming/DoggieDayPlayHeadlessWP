@@ -11,7 +11,6 @@ async function grabNav(url) {
         let link = document.createElement('a');
         link.innerText = linkText;
         link.setAttribute('href', linkURL)
-        link.setAttribute('target', '_blank')
         link.setAttribute('rel', 'noreferrer')
         link.classList.add('navigation__link')
         linkElementParent.append(link)

@@ -97,3 +97,42 @@ color: variables.$brand-black;
         line-height: 24px;
     }
 }
+
+.staffGrid {
+    margin-bottom: 235px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 350px));
+    grid-gap: 84px; 
+    justify-content: center;
+
+    @include variables.small-tablet-media-query {
+        margin-bottom: 100px;
+    }
+
+    @include variables.under-tablet-media-query {
+        gap: 30px;
+    }
+}
+
+.staff {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.staff__name {
+    height: 50px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: variables.$brand-gold;
+    font-family: variables.$wendy-one;
+    font-size: 36px;
+    color: variables.$brand-black;
+
+    @include variables.mobile-media-query {
+        height: 30px;
+        font-size: 24px;
+    }
+}

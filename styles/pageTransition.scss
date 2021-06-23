@@ -1,23 +1,4 @@
 @use 'variables.scss';
-@use 'nav.scss';
-@use 'home.scss';
-@use 'about.scss';
-@use 'services.scss';
-@use 'contact.scss';
-@use 'button.scss';
-@use 'slider.scss';
-@use 'footer.scss';
-@use 'pageTransition.scss';
-
-body {
-    background-color: variables.$body;
-}
-
-section {
-    max-width: 1440px;
-    margin-left: auto;
-    margin-right: auto;
-}
 
 .cover-enter-active, 
 .cover-leave-active,

@@ -9,17 +9,19 @@ footer {
 
     @include variables.under-tablet-media-query {
         margin-top: 0;
+        height: 125px;
     }
 }
 
 .footerContainer {
-    padding: 0 32px;
+    padding: 0 58px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
 
     @include variables.under-tablet-media-query {
+        padding: 0 32px;
         flex-direction: column;
         justify-content: center;
     }
@@ -27,6 +29,7 @@ footer {
 
 .footerContactLinks {
     ul {
+        padding: 0;
         margin: 0;
         display: flex;
         list-style: none;
@@ -77,6 +80,11 @@ footer {
                         @include variables.under-tablet-media-query {
                             font-size: 16px;
                         }
+                            img {
+                                @include variables.under-tablet-media-query {
+                                    max-width: 20px;
+                                }
+                            }
                     }
             }
     }

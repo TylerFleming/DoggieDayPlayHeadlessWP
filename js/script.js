@@ -1,11 +1,72 @@
 import grabNav, {skipLink} from './grabNav.js'
 import grabHamburger, {toggleMenu, hamburgerOpenIcon, hamburgeCloseIcon, loadMenuIconElement} from './grabHamburger.js'
-import { grabHomePageImages, grabHomePageText } from './homepage.js'
+import { grabHomePageImages, grabHomePageText } from './homePage.js'
+import { grabAboutPageImages, grabAboutPageText } from './aboutPage.js'
 import loadTestimonials from './loadTestimonials.js'
 import grabFooter from './grabFooter.js'
+import barba from '@barba/core'
+import barbaCss from '@barba/css'
+
+
+
+barba.use(barbaCss)
+
+barba.hooks.beforeEnter( (data) => {
+
+    // run the scripts based upon the current page
+    switch(data.next.namespace) {
+        case 'homepage':
+        grabHomePageImages('https://tylerfleming.dev/wp-json/acf/v3/pages/37')
+        grabHomePageText('https://tylerfleming.dev/wp-json/acf/v3/pages/37')
+        loadTestimonials('https://tylerfleming.dev/wp-json/acf/v3/pages/37')
+        grabFooter('https://tylerfleming.dev/wp-json/acf/v3/options/options')
+
+        break;
+
+        case 'aboutpage':
+            grabAboutPageImages('https://tylerfleming.dev/wp-json/acf/v3/pages/86')
+            grabAboutPageText('https://tylerfleming.dev/wp-json/acf/v3/pages/86')
+            grabFooter('https://tylerfleming.dev/wp-json/acf/v3/options/options')
+
+        break;
+
+        case 'servicespage':
+            grabFooter('https://tylerfleming.dev/wp-json/acf/v3/options/options')
+
+        break;
+
+        case 'contactpage':
+            grabFooter('https://tylerfleming.dev/wp-json/acf/v3/options/options')
+
+        break;
+
+    }
+})
+
+
+barba.init({
+    transitions: [
+        // {
+        //     name: 'self',
+        //     leave() {},
+        //     enter() {}
+        // },
+        {
+            name: 'cover',
+            to: {
+                namespace: ['homepage', 'aboutpage']
+            },
+            leave() {},
+            enter() {}
+        }
+    ]
+})
+
+
+
+
 
 let resizeTimer
-
 //When resizing the window only run the resize function once every 300ms and check to see if window width is greater than 768px then remove all the mobile navigation classes
 window.addEventListener('resize', (event) => {
     clearTimeout(resizeTimer)
@@ -36,32 +97,3 @@ grabNav('http://tylerfleming.dev/wp-json/menus/v1/menus/primary')
 grabHamburger('http://tylerfleming.dev/wp-json/wp/v2/media')
 toggleMenu()
 skipLink()
-
-// build out the footer
-grabFooter('http://tylerfleming.dev/wp-json/acf/v3/options/options')
-
-
-// get the current page and run the right function to grab the data for that page
-const currentPage = document.body.classList[0]
-
-// run the scripts based upon the current page
-switch(currentPage) {
-    case 'homepage':
-    grabHomePageImages('http://tylerfleming.dev//wp-json/acf/v3/pages/37')
-    grabHomePageText('http://tylerfleming.dev//wp-json/acf/v3/pages/37')
-    loadTestimonials('http://tylerfleming.dev//wp-json/acf/v3/pages/37')
-    break;
-
-    case 'aboutpage':
-        console.log('about page')
-    break;
-
-    case 'servicespage':
-
-    break;
-
-    case 'contactpage':
-
-    break;
-
-}

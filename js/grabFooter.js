@@ -24,7 +24,6 @@ async function grabFooter(url) {
       socialLinkElementContainer.innerHTML += socialLinkElement
 
     });
-
 }
 
 

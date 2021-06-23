@@ -58,6 +58,7 @@
     font-size: 20px;
     line-height: 28px;
     color: variables.$brand-black;
+    text-align: left;
 
     @include variables.small-desktop-media-query {
         margin: 0 0 25px 0;
@@ -91,6 +92,7 @@
     grid-template-columns: 1fr 1fr;
     grid-template-areas: 
     'perksCopy perksImage';
+    justify-items: center;
 
     @include variables.small-desktop-media-query {
         padding: 0 30px;
@@ -138,6 +140,7 @@
     font-size: 20px;
     line-height: 28px;
     color: variables.$brand-black;
+    text-align: left;
 
     @include variables.small-desktop-media-query {
         margin: 0 0 25px 0;
@@ -185,7 +188,9 @@
     grid-area: perksImage;
     display: flex;
     justify-content: center;
-    width: 100%;
+        img {
+            width: 100%;
+        }
 }
 
 
