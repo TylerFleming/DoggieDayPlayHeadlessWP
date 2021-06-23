@@ -22,11 +22,15 @@ export function skipLink() {
     let skipLinkTrigger = document.querySelector('#logo')
     let skipLinkContainer = document.querySelector('.skipLink ')
     let skipLinkElement = document.querySelector('.skipLink__item')
-    skipLinkTrigger.addEventListener('focus', () => {
-        skipLinkContainer.classList.add('open')
+    skipLinkTrigger.addEventListener('keydown', (e) => {
+        if ( e.keyCode === 9 ) {
+            skipLinkContainer.classList.add('open')
+        }
     })
-    skipLinkElement.addEventListener('blur', () => {
-        skipLinkContainer.classList.remove('open')
+    skipLinkElement.addEventListener('keydown', (e) => {
+        if ( e.keyCode === 9 ) {
+            skipLinkContainer.classList.remove('open')
+        }
     })
 }
 

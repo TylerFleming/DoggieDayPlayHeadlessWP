@@ -1,0 +1,29 @@
+@use 'variables.scss';
+
+
+form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+}
+
+fieldset {
+    border: none;
+}
+
+
+#nameEmailFieldSet {
+    grid-area: nameEmail;
+}
+
+#dateTimeFieldSet {
+    grid-area: dateTime;
+}
+
+#servicesFieldSet {
+    grid-area: service;
+}
+
+#messageFieldSet {
+    grid-area: message;
+}

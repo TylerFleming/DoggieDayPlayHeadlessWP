@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Doggie Day Play - About</title>
+    <title>Doggie Day Play - Contact</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" href="/styles/styles.scss">
     <link rel="shortcut icon" type="image/jpg" href="/images/paw-solid.webp"/>
@@ -35,7 +35,7 @@
     <div class="wrapper">
 
 
-        <main id="mainContent" data-barba="container" data-barba-namespace="aboutpage">
+        <main id="mainContent" data-barba="container" data-barba-namespace="contactpage">
 
             <div class="transition">
                 <svg xmlns="http://www.w3.org/2000/svg" width="824" height="824" viewBox="0 0 824 824" fill="none">
@@ -44,27 +44,61 @@
                     </svg>
             </div>
 
-            <section id="aboutIntro">
-                <div class="aboutIntro__container">
-                    <h2 class="aboutHeadline"></h2>
-                    <p class="aboutParagraph"></p>
-                    <button class="ctaButton"> 
-                        <i class="fas fa-paw"></i>
-                        <a class="ctaButton__link"></a>
-                        <i class="fas fa-paw"></i>
-                    </button>
+            <section id="formIntro">
+                <div class="formContainer">
+                    <h2 class="formHeadline"></h2>
+                    <p class="formParagraph"></p>
                 </div>
-            </section>
+                <form action="https://formspree.io/f/xleanqky"method="POST">
+                    <fieldset id="nameEmailFieldSet">
+                        <label for="name">
+                            Name:
+                            <input id="name" type="text">
+                        </label>
+                        <label for="email">
+                             Email:
+                            <input id="email" type="email">
+                        </label>
+                    </fieldset>
 
-            <section id="aboutStaff">
-                <div class="aboutStaff__container">
-                    <h2 class="aboutStaffHeadline"></h2>
-                    <p class="aboutStaffParagraph"></p>
-                </div>
+                    <fieldset id="dateTimeFieldSet">
+                        <label for="date">
+                            Date:
+                            <input id="date" type="date">
+                        </label>
+                        <label for="time">
+                             Time:
+                            <input id="time" type="text" placeholder="example: 7am-7pm">
+                        </label>
+                    </fieldset>
 
-                <div class="staffGrid">
+                    <fieldset id="servicesFieldSet">
+                        <label for="services">
+                            Service:
+                            <select id="services" name="services">
+                                <option value="Daycare">Daycare</option>
+                                <option value="Overnight Boarding">Overnight Boarding</option>
+                                <option value="Walks">Walks</option>
+                                <option value="Nail Cleaning & Trimming">Nail Cleaning & Trimming</option>
+                                <option value="Bathing">Bathing</option>
+                                <option value="Grooming">Grooming</option>
+                              </select>
+                        </label>
+                    </fieldset>
+                <fieldset id="messageFieldSet">
+                    <label for="message"> 
+                        Your message:
+                        <textarea id="message" name="message"></textarea>
+                    </label>
+                </fieldset>
 
-                </div>
+
+                <button type="submit" class="ctaButton"> 
+                    <i class="fas fa-paw"></i>
+                    <a class="ctaButton__link">Submit</a>
+                    <i class="fas fa-paw"></i>
+                </button>>
+                </form>
             </section>
 
                 

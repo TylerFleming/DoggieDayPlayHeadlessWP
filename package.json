@@ -4,7 +4,7 @@
   "description": "",
   "main": "./js/script.js",
   "scripts": {
-    "start": "parcel index.html about.html ./styles/* ./js/script.js"
+    "start": "parcel index.html about.html services.html contact.html ./styles/* ./js/script.js"
   },
   "keywords": [],
   "author": "",
@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "@barba/core": "^2.9.7",
-    "@barba/css": "^2.1.15"
+    "@barba/css": "^2.1.15",
+    "@barba/prefetch": "^2.1.10"
   }
 }

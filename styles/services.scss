@@ -1,0 +1,122 @@
+@use 'variables.scss';
+
+#servicesIntro {
+    margin-top: 130px;
+    padding: 0 58px;
+
+    @include variables.small-desktop-media-query {
+        padding: 0 30px;
+    }   
+}
+
+.servicesContainer {
+    display: flex;
+    flex-direction: column;
+    
+    @include variables.under-tablet-media-query {
+        text-align: center;
+    }
+
+    .ctaButton {
+        align-self: center;
+    }
+}
+
+.servicesParagraph {
+    margin: 0 0 50px 0;
+    font-family: variables.$roboto;
+    font-size: 20px;
+    line-height: 28px;
+    color: variables.$brand-black;
+    text-align: center;
+
+    @include variables.small-desktop-media-query {
+        margin: 0 0 25px 0;
+        font-size: 18px;
+        line-height: 24px;
+    }
+}
+
+
+
+.servicesHeadline {
+margin: 0 0 15px 0px;
+font-family: variables.$wendy-one;
+font-size: 48px;
+line-height: 50px;
+color: variables.$brand-black;
+
+    @include variables.small-desktop-media-query {
+        font-size: 32px;
+        line-height: 36px;
+    }
+}
+
+
+#services {
+    margin-top: 125px;
+    padding: 0 58px;
+
+    @include variables.small-desktop-media-query {
+        padding: 0 30px;
+    }
+
+    @include variables.under-tablet-media-query {
+        margin-top: 100px;
+    }
+
+    @include variables.mobile-media-query {
+        margin-top: 50px;
+    }
+    
+    .ctaButton {
+        margin: 0 auto 20px auto;
+
+        @include variables.under-tablet-media-query {
+            margin-bottom: 100px;
+        }
+
+        @include variables.mobile-media-query {
+            margin-bottom: 50px;
+        }
+    }
+}
+
+.servicesGrid {
+    margin-bottom: 150px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 350px));
+    grid-gap: 84px; 
+    justify-content: center;
+
+    @include variables.small-tablet-media-query {
+        margin-bottom: 100px;
+    }
+
+    @include variables.under-tablet-media-query {
+        gap: 30px;
+    }
+}
+
+.service {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.service__name {
+    height: 50px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: variables.$brand-gold;
+    font-family: variables.$wendy-one;
+    font-size: 24px;
+    color: variables.$brand-black;
+
+    @include variables.mobile-media-query {
+        height: 30px;
+        font-size: 18px;
+    }
+}
