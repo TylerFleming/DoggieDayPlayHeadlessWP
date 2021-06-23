@@ -2,6 +2,8 @@ import grabNav, {skipLink} from './grabNav.js'
 import grabHamburger, {toggleMenu, hamburgerOpenIcon, hamburgeCloseIcon, loadMenuIconElement} from './grabHamburger.js'
 import { grabHomePageImages, grabHomePageText } from './homepage.js'
 import loadTestimonials from './loadTestimonials.js'
+import grabFooter from './grabFooter.js'
+
 let resizeTimer
 
 //When resizing the window only run the resize function once every 300ms and check to see if window width is greater than 768px then remove all the mobile navigation classes
@@ -35,6 +37,8 @@ grabHamburger('http://tylerfleming.dev/wp-json/wp/v2/media')
 toggleMenu()
 skipLink()
 
+// build out the footer
+grabFooter('http://tylerfleming.dev/wp-json/acf/v3/options/options')
 
 
 // get the current page and run the right function to grab the data for that page
