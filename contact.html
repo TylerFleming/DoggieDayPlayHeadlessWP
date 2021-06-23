@@ -45,59 +45,71 @@
             </div>
 
             <section id="formIntro">
-                <div class="formContainer">
-                    <h2 class="formHeadline"></h2>
-                    <p class="formParagraph"></p>
+                <div class="formIntroContainer">
+                    <h2 class="contactHeadline"></h2>
+                    <p class="contactParagraph"></p>
                 </div>
                 <form action="https://formspree.io/f/xleanqky"method="POST">
-                    <fieldset id="nameEmailFieldSet">
-                        <label for="name">
-                            Name:
-                            <input id="name" type="text">
-                        </label>
-                        <label for="email">
-                             Email:
-                            <input id="email" type="email">
-                        </label>
-                    </fieldset>
 
-                    <fieldset id="dateTimeFieldSet">
-                        <label for="date">
-                            Date:
-                            <input id="date" type="date">
-                        </label>
-                        <label for="time">
-                             Time:
-                            <input id="time" type="text" placeholder="example: 7am-7pm">
-                        </label>
-                    </fieldset>
+                    <div class="formContainer">
+                            <fieldset>
+    
+                                <div class="formContainer">
+                                    
+                                </div>
+    
+                                <label for="name">
+                                    Name:
+                                </label>
+                                <input id="name" type="text" placeholder="Full Name">
+                                    <label for="email">
+                                        Email:
+                                   </label>
+                                   <input id="email" type="email" placeholder="Email">
+                                   </fieldset>
+    
+                            <fieldset>
+                                    <label for="date">
+                                        Date:
+                                    </label>
+                                    <input id="date" type="date">
+                                    <label for="time">
+                                        Time:
+                                   </label>
+                                   <input id="time" type="text" placeholder="example: 7am-7pm">    
+                            </fieldset>
+    
+                            <fieldset class="servicesFieldSet">
+                                <label for="services">
+                                    Service:
+                                </label>
+                                <select id="servicesInput" name="services">\
+                                    <optgroup>
+                                        <option value="Daycare">Daycare</option>
+                                        <option value="Overnight Boarding">Overnight Boarding</option>
+                                        <option value="Walks">Walks</option>
+                                        <option value="Nail Cleaning & Trimming">Nail Cleaning & Trimming</option>
+                                        <option value="Bathing">Bathing</option>
+                                        <option value="Grooming">Grooming</option>
+                                    </optgroup>
+                                  </select>
+                            </fieldset>
+    
+                        <fieldset class="messageFieldSet">
+                            <label for="message"> 
+                                Your message:
+                            </label>
+                            <textarea id="message" name="message"></textarea>
+    
+                        </fieldset>
+                        
+                        <button type="submit" class="ctaButton"> 
+                            <i class="fas fa-paw"></i>
+                            <a class="ctaButton__link">Submit</a>
+                            <i class="fas fa-paw"></i>
+                        </button>
+                    </div>
 
-                    <fieldset id="servicesFieldSet">
-                        <label for="services">
-                            Service:
-                            <select id="services" name="services">
-                                <option value="Daycare">Daycare</option>
-                                <option value="Overnight Boarding">Overnight Boarding</option>
-                                <option value="Walks">Walks</option>
-                                <option value="Nail Cleaning & Trimming">Nail Cleaning & Trimming</option>
-                                <option value="Bathing">Bathing</option>
-                                <option value="Grooming">Grooming</option>
-                              </select>
-                        </label>
-                    </fieldset>
-                <fieldset id="messageFieldSet">
-                    <label for="message"> 
-                        Your message:
-                        <textarea id="message" name="message"></textarea>
-                    </label>
-                </fieldset>
-
-
-                <button type="submit" class="ctaButton"> 
-                    <i class="fas fa-paw"></i>
-                    <a class="ctaButton__link">Submit</a>
-                    <i class="fas fa-paw"></i>
-                </button>>
                 </form>
             </section>
 

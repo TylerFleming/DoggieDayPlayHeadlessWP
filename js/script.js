@@ -3,6 +3,7 @@ import grabHamburger, {toggleMenu, hamburgerOpenIcon, hamburgeCloseIcon, loadMen
 import { grabHomePageImages, grabHomePageText } from './homePage.js'
 import { grabAboutPageImages, grabAboutPageText } from './aboutPage.js'
 import { grabServicesPageImages, grabServicesPageText } from './servicesPage.js'
+import grabContactPageText from './contactPage.js'
 import loadTestimonials from './loadTestimonials.js'
 import grabFooter from './grabFooter.js'
 import barba from '@barba/core'
@@ -41,10 +42,11 @@ barba.hooks.beforeEnter( (data) => {
             grabServicesPageImages('https://tylerfleming.dev/wp-json/acf/v3/pages/125')
             grabServicesPageText('https://tylerfleming.dev/wp-json/acf/v3/pages/125')
             grabFooter('https://tylerfleming.dev/wp-json/acf/v3/options/options')
-
+            
         break;
 
         case 'contactpage':
+            grabContactPageText('https://tylerfleming.dev/wp-json/acf/v3/pages/156')
             grabFooter('https://tylerfleming.dev/wp-json/acf/v3/options/options')
 
         break;
