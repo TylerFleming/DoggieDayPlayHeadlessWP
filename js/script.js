@@ -91,6 +91,7 @@ barba.init({
     transitions: [
         {
             async leave(data) {
+                resetMenu()
                 pageTransition()
                 contentTransitionLeave()
                 await delay(1550)
