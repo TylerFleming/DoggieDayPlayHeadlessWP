@@ -1,7 +1,11 @@
+import { delay } from 'q'
+
+
 async function grabFooter(url) {
     let data = await fetch(url)
     data = await data.json()
 
+    await delay(2000)
     let contactPhoneData = data.acf.contact_repeater[0]
     let contactLocationData = data.acf.contact_repeater[1]
     let contactElementContainer = document.querySelector('.footerContactLinks > ul')

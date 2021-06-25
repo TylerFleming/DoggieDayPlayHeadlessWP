@@ -56,15 +56,17 @@ export function loadMenuIconElement() {
 }
 
 export function resetMenu() {
-    if ( window.innerWidth <= 768 ) {
-        let hamburgerMenu = document.querySelector('#menuToggle')
-        let nav = document.querySelector('.navigation__links')
-        let hamburgerIcon = loadMenuIconElement()
-        nav.classList.remove('open')
-    
-        hamburgerMenu.setAttribute('aria-pressed', false)
-    }
+    window.scrollTo(0,0)
+    if ( window.innerWidth > 768 ) {
+        return
+    } 
+    let hamburgerMenu = document.querySelector('#menuToggle')
+    let nav = document.querySelector('.navigation__links')
+    let hamburgerIcon = loadMenuIconElement()
+    nav.classList.remove('open')
 
+    hamburgerMenu.setAttribute('aria-pressed', false)
+    hamburgerIcon.setAttribute('src', hamburgerOpenIcon)
 }
 
 export default grabHamburger

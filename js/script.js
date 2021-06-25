@@ -6,22 +6,20 @@ import { grabServicesPageImages, grabServicesPageText } from './servicesPage.js'
 import grabContactPageText from './contactPage.js'
 import loadTestimonials from './loadTestimonials.js'
 import grabFooter from './grabFooter.js'
+import barba from '@barba/core'
+import { gsap } from 'gsap'
+import { delay } from 'q'
 
-// build out the nav
-grabNav('https://tylerfleming.dev/wp-json/menus/v1/menus/primary')
-grabHamburger('https://tylerfleming.dev/wp-json/wp/v2/media')
-toggleMenu()
-skipLink()
 
-const bodyClass = document.body.classList[0]
 
-    switch(bodyClass) {
+barba.hooks.beforeEnter( data => {
+    switch(data.next.namespace) {
         case 'homepage':
             grabHomePageImages('https://tylerfleming.dev/wp-json/acf/v3/pages/37')
             grabHomePageText('https://tylerfleming.dev/wp-json/acf/v3/pages/37')
             loadTestimonials('https://tylerfleming.dev/wp-json/acf/v3/pages/37')
             grabFooter('https://tylerfleming.dev/wp-json/acf/v3/options/options')
-            // resetMenu()
+            resetMenu()
             
         break;
 
@@ -29,7 +27,7 @@ const bodyClass = document.body.classList[0]
             grabAboutPageImages('https://tylerfleming.dev/wp-json/acf/v3/pages/86')
             grabAboutPageText('https://tylerfleming.dev/wp-json/acf/v3/pages/86')
             grabFooter('https://tylerfleming.dev/wp-json/acf/v3/options/options')
-            // resetMenu()
+            resetMenu()
 
         break;
 
@@ -37,21 +35,84 @@ const bodyClass = document.body.classList[0]
             grabServicesPageImages('https://tylerfleming.dev/wp-json/acf/v3/pages/125')
             grabServicesPageText('https://tylerfleming.dev/wp-json/acf/v3/pages/125')
             grabFooter('https://tylerfleming.dev/wp-json/acf/v3/options/options')
-            // resetMenu()
+            resetMenu()
 
         break;
 
         case 'contactpage':
             grabContactPageText('https://tylerfleming.dev/wp-json/acf/v3/pages/156')
             grabFooter('https://tylerfleming.dev/wp-json/acf/v3/options/options')
-            // resetMenu()
+            resetMenu()
 
         break;
+    } 
+})
 
+
+function pageTransition() {
+    let tl = gsap.timeline()
+    tl.to('.transition', {
+    y: '100%',
+    duration: 1.5,
+    ease: "easeInOut"})
+
+    tl.to('section', {
+    opacity: 0,
+    duration: 1.5,
+    ease: "power1"
+    }, "-=1.5")
+}
+
+function loadFooter() {
+    gsap.fromTo('footer', {
+        opacity: 0
+    },
+    {
+        opacity: 1,
+        duration: 0.5
     }
+    )
+}
 
+function contentTransitionLeave() {
+    pageTransition() 
+}
 
+function contentTransitionEnter() {
+    gsap.fromTo("section", 
+    {opacity: 0}, 
+    {opacity: 1, duration: 2}
+    )
+}
 
+barba.init({
+    sync: true,
+
+    transitions: [
+        {
+            async leave(data) {
+                pageTransition()
+                contentTransitionLeave()
+                await delay(1550)
+                const done = this.async()
+                done()
+            },
+
+            async enter(data) {
+                loadFooter()
+                await delay(150)
+                contentTransitionEnter()
+
+            },
+        }
+    ]
+})
+
+// build out the nav
+grabNav('https://tylerfleming.dev/wp-json/menus/v1/menus/primary')
+grabHamburger('https://tylerfleming.dev/wp-json/wp/v2/media')
+toggleMenu()
+skipLink()
 
 
 
