@@ -5,11 +5,13 @@
     padding: 20px;
     display: flex;
     align-items: center;    
+    justify-content: center;
     background: variables.$brand-gold;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: 250ms all;
+    max-width: 300px;
         &:hover {
             transform: translateY(-5px);
         }
@@ -19,11 +21,12 @@
             font-size: 24px;
             color: variables.$brand-black;    
             text-decoration: none;
+
+            @include variables.small-desktop-media-query {
+                font-size: 18px;
+            }
         }
 
-        @include variables.small-desktop-media-query {
-            font-size: 18px;
-        }
 }
 
 .fa-paw {
