@@ -7,9 +7,11 @@ import grabContactPageText from './contactPage.js'
 import loadTestimonials from './loadTestimonials.js'
 import grabFooter from './grabFooter.js'
 import barba from '@barba/core'
+import barbaPrefetch from '@barba/prefetch'
 import { gsap } from 'gsap'
 import { delay } from 'q'
 
+barba.use(barbaPrefetch);
 
 
 barba.hooks.beforeEnter( data => {
@@ -48,6 +50,20 @@ barba.hooks.beforeEnter( data => {
     } 
 })
 
+function makePizza(toppings) {
+    const pizzaPromise = new Promise(function(resolve, reject) {
+        if ( toppings.includes('pineapple') ) {
+            reject("seriously get out")
+        }
+      resolve(`Here is your pizza 🍕 with the toppings ${toppings.join(' ')}`);
+    });
+    return pizzaPromise;
+  }
+
+  makePizza(['pizza', 'cheese'])
+  .then(result => console.log(result))
+  .catch(err => console.log(err))
+  
 
 function pageTransition() {
     let tl = gsap.timeline()
